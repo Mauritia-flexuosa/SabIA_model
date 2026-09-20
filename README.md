@@ -5,9 +5,9 @@
 ![Espécies](https://img.shields.io/badge/Espécies-216-orange)
 ![Licença](https://img.shields.io/badge/Licença-CC%20BY--NC%204.0-lightgrey)
 
-O [SabIA](https://mauritia-flexuosa.github.io/SabIApp/) é um motor de Inteligência Artificial otimizado para dispositivos móveis (Edge AI) focado na identificação offline de aves brasileiras através do seu canto. 
+O **SabIA** é um motor de Inteligência Artificial otimizado para dispositivos móveis (Edge AI) focado na identificação offline de aves brasileiras através do seu canto. 
 
-Este repositório contém o pipeline completo de *Machine Learning* utilizado para treinar o modelo que alimenta o aplicativo comercial SabIA (em breve estará disponível para testes no Android). O projeto resolve o desafio da bioacústica transformando matrizes de áudio do mundo real em espectrogramas visuais e processando-os através de uma rede neural convolucional de alta eficiência.
+Este repositório contém o pipeline completo de *Machine Learning* utilizado para treinar o modelo que alimenta o [Aplicativo SabIA](https://mauritia-flexuosa.github.io/SabIApp/) (em breve estará disponível para testes no Android). O projeto resolve o desafio da bioacústica transformando matrizes de áudio do mundo real em espectrogramas visuais e processando-os através de uma rede neural convolucional de alta eficiência.
 
 ---
 
@@ -39,3 +39,24 @@ O modelo foi construído utilizando **Transfer Learning** sobre a arquitetura `E
   1. *Aquecimento (Warm-up):* Base congelada para treinar apenas o topo denso e proteger os pesos pré-treinados.
   2. *Descongelamento Profundo:* Ajuste fino com taxa de aprendizado reduzida (`1e-4`) e callbacks de `EarlyStopping` e `ReduceLROnPlateau`.
 
+## 📱 Sobre o Aplicativo Android
+
+O modelo .tflite gerado por estes scripts é o cérebro por trás do aplicativo SabIA. Todo o processamento matemático — desde a gravação pelo microfone do celular, passando pela conversão em espectrograma (usando Kotlin), até a inferência na rede neural — ocorre de forma imediata e offline.
+
+## ⚖️ Licença de Uso (Importante)
+
+A preservação da biodiversidade é um esforço coletivo. Por isso, os scripts deste repositório e o Dataset atrelado estão sob a licença Creative Commons Atribuição-NãoComercial 4.0 Internacional (CC BY-NC 4.0).
+
+Você é livre para:
+
+   * **Compartilhar**: Copiar e redistribuir o material em qualquer suporte ou formato.
+
+   * **Adaptar**: Remixar, transformar e criar a partir do material (como para projetos de faculdade ou pesquisas científicas).
+
+Sob as seguintes condições:
+
+   * **Atribuição**: Você deve dar o crédito apropriado ao projeto SabIA e fornecer um link para esta licença.
+
+   * **Uso Não-Comercial**: Você NÃO PODE utilizar o modelo treinado, os scripts ou o dataset deste repositório para finalidades comerciais (incluindo, mas não se limitando a: empacotar a IA em aplicativos pagos, aplicativos com anúncios, ou serviços de consultoria comercial).
+
+Para dúvidas, pesquisas acadêmicas ou parcerias, sinta-se à vontade para abrir uma `Issue` ou entrar em contato!
